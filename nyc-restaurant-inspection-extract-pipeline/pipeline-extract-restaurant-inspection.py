@@ -145,8 +145,6 @@ class GenerateNYCOpenDataAPIUrls(beam.DoFn):
                     offset = pageNumber * self.pageSize
                     apiUrl = self.getApiUrl(apiQuery + ' LIMIT ' + str(self.pageSize) + ' OFFSET ' + str(offset)) 
                     apiUrls.append(apiUrl)
-                    if len(apiUrls) > 5:
-                        break
 
             logging.info("Total %d API URLs are generated for violation code %s", len(apiUrls), violationCode)
 
