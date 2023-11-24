@@ -320,6 +320,8 @@ class Program():
             projectId=self.GCLOUD_BIGQUERY_PROJECT_ID,
             datasetId=self.GCLOUD_BIGQUERY_DATASET,
             tableId=known_args.dest_table)
+        
+        logging.info("Extract data with created_date >= %s && < %s", self.dataStartDate, self.dataEndDate)
 
         with beam.Pipeline(options=beam_options) as p:
             (p
