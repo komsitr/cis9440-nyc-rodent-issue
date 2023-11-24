@@ -1,11 +1,7 @@
-from datetime import datetime, timedelta
-from dateutil import tz
-
+import sys
 import json
 import logging
 import apache_beam as beam
-import requests
-import urllib.parse
 from apache_beam.io.gcp.internal.clients import bigquery
 from apache_beam.options.pipeline_options import PipelineOptions
 import argparse
@@ -151,6 +147,9 @@ class CallNYCOpenDataAPI(beam.DoFn):
         self.dataEndDate = dataEndDate
 
     def process(self, complaintType):
+        import requests
+        import urllib.parse
+
         try:
             apiQuery = 'SELECT `unique_key`, `created_date`, `closed_date`, `complaint_type`, \
                     `descriptor`, `location_type`, `incident_zip`, `incident_address`, `street_name`, \
@@ -177,6 +176,9 @@ class CallNYCOpenDataAPI(beam.DoFn):
 
 
 class MapServiceRequestToBigQueryRecord(beam.DoFn):
+    def __init__(self, dateTimeFormat):
+        self.dateTimeFormat = dateTimeFormat
+
     def get_string_value(self, record, key):
         if key in record and record[key] is not None:
             return record[key]
@@ -184,8 +186,10 @@ class MapServiceRequestToBigQueryRecord(beam.DoFn):
             return None
         
     def get_date_value(self, record, key):
+        from datetime import datetime
+
         if key in record and record[key] is not None:
-            return datetime.strptime(record[key], DATE_TIME_FORMAT)
+            return datetime.strptime(record[key], self.dateTimeFormat)
         else:
             return None
         
@@ -244,7 +248,7 @@ class MapServiceRequestToBigQueryRecord(beam.DoFn):
 
 class Program():
 
-    GCLOUD_PROJECT_ID: str
+    GCLOUD_BIGQUERY_PROJECT_ID: str
     GCLOUD_BIGQUERY_DATASET: str
     NYC_OPENDATA_API_KEY: str
 
@@ -253,6 +257,9 @@ class Program():
     destWriteDisposition: beam.io.BigQueryDisposition
 
     def init_variables(self, mode):
+        from datetime import datetime, timedelta
+        from dateutil import tz
+
         utc_tz = tz.gettz('UTC')
         nyc_tz = tz.gettz('America/New_York')
 
@@ -277,7 +284,7 @@ class Program():
             '--project',
             dest='project',
             required=True,
-            help='Google Cloud project ID')
+            help='Google BigQuery project ID')
         parser.add_argument(
             '--dataset',
             dest='dataset',
@@ -301,32 +308,32 @@ class Program():
         
         known_args, pipeline_args = parser.parse_known_args(argv)
         
-        self.GCLOUD_PROJECT_ID = known_args.project
+        self.GCLOUD_BIGQUERY_PROJECT_ID = known_args.project
         self.GCLOUD_BIGQUERY_DATASET = known_args.dataset
         self.NYC_OPENDATA_API_KEY = known_args.nyc_opendata_apikey
 
         self.init_variables(known_args.mode)
 
-        beam_options = PipelineOptions(pipeline_args)
+        beam_options = PipelineOptions(sys.argv[1:])
 
         dest_table_spec = bigquery.TableReference(
-            projectId=self.GCLOUD_PROJECT_ID,
+            projectId=self.GCLOUD_BIGQUERY_PROJECT_ID,
             datasetId=self.GCLOUD_BIGQUERY_DATASET,
             tableId=known_args.dest_table)
 
         with beam.Pipeline(options=beam_options) as p:
-            (p \
-            | 'Load the focus complaint types' >> beam.io.ReadFromBigQuery(
-                table=f'{self.GCLOUD_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.focus_complaint_type',
+            (p
+            | 'Load focus complaint types' >> beam.io.ReadFromBigQuery(
+                table=f'{self.GCLOUD_BIGQUERY_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.focus_complaint_type',
                 method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
-            | beam.Map(lambda lookup: lookup['complaint_type'])
-            | 'Call 311 NYC API' >> beam.ParDo(CallNYCOpenDataAPI(
+            | 'Extract complaint type value' >> beam.Map(lambda lookup: lookup['complaint_type'])
+            | 'Request 311 NYC API' >> beam.ParDo(CallNYCOpenDataAPI(
                 {'X-App-Token': self.NYC_OPENDATA_API_KEY, 'Accept': 'application/json'},
                 self.dataStartDate,
-                self.dataEndDate)) \
-            | beam.FlatMap(lambda records: records) \
-            | beam.ParDo(MapServiceRequestToBigQueryRecord()) \
-            | beam.io.WriteToBigQuery(
+                self.dataEndDate))
+            | 'Flat-map API response' >> beam.FlatMap(lambda records: records)
+            | 'Map API response to entity' >> beam.ParDo(MapServiceRequestToBigQueryRecord(DATE_TIME_FORMAT))
+            | 'Save to BigQuery' >> beam.io.WriteToBigQuery(
                 dest_table_spec,
                 schema=TARGET_TABLE_SCHEMA,
                 write_disposition=self.destWriteDisposition,
