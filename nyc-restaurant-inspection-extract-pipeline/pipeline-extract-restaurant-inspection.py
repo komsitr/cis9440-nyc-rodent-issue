@@ -332,7 +332,7 @@ class Program():
             | 'Save to BigQuery' >> beam.io.WriteToBigQuery(
                 dest_table_spec,
                 schema=TARGET_TABLE_SCHEMA,
-                write_disposition=beam.io.BigQueryDisposition.WRITE_TRUNCATE,
+                write_disposition=self.destWriteDisposition,
                 create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED)
             )
 
