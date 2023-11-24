@@ -140,42 +140,92 @@ TARGET_TABLE_SCHEMA = {
 }
 
 # https://stackoverflow.com/questions/66689429/how-to-get-data-from-an-api-using-apache-beam-dataflow
-class CallNYCOpenDataAPI(beam.DoFn):
-    def __init__(self, headers, dataStartDate, dataEndDate):
+class GenerateNYCOpenDataAPIUrls(beam.DoFn):
+    def __init__(self, headers, dataStartDate, dataEndDate, pageSize):
         self.headers = headers
         self.dataStartDate = dataStartDate
         self.dataEndDate = dataEndDate
+        self.pageSize = pageSize
+
+    def getApiUrl(self, query):
+        import urllib.parse
+        return 'https://data.cityofnewyork.us/resource/erm2-nwe9.json?$query=' + urllib.parse.quote(query)
 
     def process(self, complaintType):
         import requests
-        import urllib.parse
+        import math
 
         try:
-            apiQuery = 'SELECT `unique_key`, `created_date`, `closed_date`, `complaint_type`, \
-                    `descriptor`, `location_type`, `incident_zip`, `incident_address`, `street_name`, \
-                    `cross_street_1`, `cross_street_2`, `intersection_street_1`, `intersection_street_2`, \
-                    `address_type`, `city`, `landmark`, `facility_type`, `status`, `due_date`, `resolution_description`, \
-                    `resolution_action_updated_date`, `community_board`, `bbl`, `borough`, `x_coordinate_state_plane`, `y_coordinate_state_plane`, \
-                    `open_data_channel_type`, `park_facility_name`, `park_borough`, `latitude`, `longitude`, \
-                    `:@computed_region_efsh_h5xi`, `:@computed_region_yeji_bk3q` \
+            countQuery = 'SELECT COUNT(*) AS `count` \
                 WHERE (`created_date` >= "' + self.dataStartDate + '" :: floating_timestamp) \
                     AND (`created_date` < "' + self.dataEndDate + '" :: floating_timestamp) \
                     AND (`latitude` IS NOT NULL) \
                     AND (`longitude` IS NOT NULL) \
                     AND (`unique_key` IS NOT NULL) \
                     AND caseless_eq(`complaint_type`, "' + complaintType + '")'
-            apiUrl = 'https://data.cityofnewyork.us/resource/erm2-nwe9.json?$query=' + urllib.parse.quote(apiQuery)
+            apiUrl = self.getApiUrl(countQuery)
 
             res = requests.get(apiUrl, headers=self.headers)
             res.raise_for_status()
+
+            totalRecords = int(json.loads(res.text)[0]['count'])
+            apiUrls = []
+
+            if totalRecords > 0:
+
+                apiQuery = 'SELECT `unique_key`, `created_date`, `closed_date`, `complaint_type`, \
+                        `descriptor`, `location_type`, `incident_zip`, `incident_address`, `street_name`, \
+                        `cross_street_1`, `cross_street_2`, `intersection_street_1`, `intersection_street_2`, \
+                        `address_type`, `city`, `landmark`, `facility_type`, `status`, `due_date`, `resolution_description`, \
+                        `resolution_action_updated_date`, `community_board`, `bbl`, `borough`, `x_coordinate_state_plane`, `y_coordinate_state_plane`, \
+                        `open_data_channel_type`, `park_facility_name`, `park_borough`, `latitude`, `longitude`, \
+                        `:@computed_region_efsh_h5xi`, `:@computed_region_yeji_bk3q` \
+                    WHERE (`created_date` >= "' + self.dataStartDate + '" :: floating_timestamp) \
+                        AND (`created_date` < "' + self.dataEndDate + '" :: floating_timestamp) \
+                        AND (`latitude` IS NOT NULL) \
+                        AND (`longitude` IS NOT NULL) \
+                        AND (`unique_key` IS NOT NULL) \
+                        AND caseless_eq(`complaint_type`, "' + complaintType + '")'
+                totalPages = math.ceil(totalRecords/self.pageSize)
+
+                logging.info("Found complaint type %s for %d rows with %d pages", complaintType, totalRecords, totalPages)
+
+                for pageNumber in range(totalPages):
+                    offset = pageNumber * self.pageSize
+                    apiUrl = self.getApiUrl(apiQuery + ' LIMIT ' + str(self.pageSize) + ' OFFSET ' + str(offset)) 
+                    apiUrls.append(apiUrl)
+
+            logging.info("Total %d API URLs are generated for complaint type %s", len(apiUrls), complaintType)
+
+            yield apiUrls
             
         except requests.HTTPError as message:
             logging.error(message)
+            yield []
 
-        yield json.loads(res.text)
+
+class CallNYCOpenDataAPI(beam.DoFn):
+    def __init__(self, headers):
+        self.headers = headers
+
+    def process(self, apiUrl):
+        import requests
+
+        try:
+            res = requests.get(apiUrl, headers=self.headers)
+            res.raise_for_status()
+
+            result = json.loads(res.text)
+            logging.info("Found API response for %d rows", len(result))
+
+            yield result
+            
+        except requests.HTTPError as message:
+            logging.error(message)
+            yield []
 
 
-class MapServiceRequestToBigQueryRecord(beam.DoFn):
+class MapAPIResponseToBigQueryRecord(beam.DoFn):
     def __init__(self, dateTimeFormat):
         self.dateTimeFormat = dateTimeFormat
 
@@ -193,15 +243,13 @@ class MapServiceRequestToBigQueryRecord(beam.DoFn):
         else:
             return None
         
-    def get_decimal_value(self, record, key):
+    def get_float_value(self, record, key):
         if key in record and record[key] is not None:
             try:
                 return float(record[key])
             except:
-                print('error', record[key])
                 return None
         else:
-            print(key, 'none')
             return None
 
     def process(self, record):
@@ -230,13 +278,13 @@ class MapServiceRequestToBigQueryRecord(beam.DoFn):
             'community_board': self.get_string_value(record, 'community_board'),
             'bbl': self.get_string_value(record, 'bbl'),
             'borough': self.get_string_value(record, 'borough'),
-            'x_coordinate_state_plane': self.get_decimal_value(record, 'x_coordinate_state_plane'),
-            'y_coordinate_state_plane': self.get_decimal_value(record, 'y_coordinate_state_plane'),
+            'x_coordinate_state_plane': self.get_float_value(record, 'x_coordinate_state_plane'),
+            'y_coordinate_state_plane': self.get_float_value(record, 'y_coordinate_state_plane'),
             'open_data_channel_type': self.get_string_value(record, 'open_data_channel_type'),
             'park_facility_name': self.get_string_value(record, 'park_facility_name'),
             'park_borough': self.get_string_value(record, 'park_borough'),
-            'latitude': self.get_decimal_value(record, 'latitude'),
-            'longitude': self.get_decimal_value(record, 'longitude'),
+            'latitude': self.get_float_value(record, 'latitude'),
+            'longitude': self.get_float_value(record, 'longitude'),
             'compute_zip': self.get_string_value(record, ':@computed_region_efsh_h5xi'),
             'compute_borough_boundaries': self.get_string_value(record, ':@computed_region_yeji_bk3q')
         }
@@ -329,12 +377,16 @@ class Program():
                 table=f'{self.GCLOUD_BIGQUERY_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.focus_complaint_type',
                 method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
             | 'Extract complaint type value' >> beam.Map(lambda lookup: lookup['complaint_type'])
-            | 'Request 311 NYC API' >> beam.ParDo(CallNYCOpenDataAPI(
+            | 'Generate NYC Open Data API pagination URLs' >> beam.ParDo(GenerateNYCOpenDataAPIUrls(
                 {'X-App-Token': self.NYC_OPENDATA_API_KEY, 'Accept': 'application/json'},
                 self.dataStartDate,
-                self.dataEndDate))
+                self.dataEndDate,
+                1000))
+            | 'Flat-map API URL' >> beam.FlatMap(lambda urls: urls)
+            | 'Request NYC Open Data API' >> beam.ParDo(CallNYCOpenDataAPI(
+                {'X-App-Token': self.NYC_OPENDATA_API_KEY, 'Accept': 'application/json'}))
             | 'Flat-map API response' >> beam.FlatMap(lambda records: records)
-            | 'Map API response to entity' >> beam.ParDo(MapServiceRequestToBigQueryRecord(DATE_TIME_FORMAT))
+            | 'Map API response to entity' >> beam.ParDo(MapAPIResponseToBigQueryRecord(DATE_TIME_FORMAT))
             | 'Save to BigQuery' >> beam.io.WriteToBigQuery(
                 dest_table_spec,
                 schema=TARGET_TABLE_SCHEMA,
@@ -343,5 +395,6 @@ class Program():
             )
 
 if __name__ == "__main__":
+    logging.getLogger().setLevel(logging.INFO)
     program = Program()
     program.main()
