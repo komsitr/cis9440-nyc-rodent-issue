@@ -1,0 +1,19 @@
+{
+  "name": "Build Location Dimension Table Template",
+  "description": "Extract locations from NYC 311 Service Requests, Restaurant Inspection, and Open Restaurant",
+  "parameters": [
+    {
+      "name": "mode",
+      "label": "Extraction mode",
+      "helpText": "snapshot = refresh all the data / increment = daily increment load",
+      "regexes": [
+        "(snapshot|increment)"
+      ]
+    },
+    {
+      "name": "dataset",
+      "label": "BigQuery Dataset name",
+      "helpText": "Google BigQuery destination dataset name"
+    }
+  ]
+}
