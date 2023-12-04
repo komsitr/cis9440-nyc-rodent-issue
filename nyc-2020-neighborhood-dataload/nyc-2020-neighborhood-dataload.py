@@ -36,12 +36,12 @@ def main():
 
     rows = []
     with open('2020 Neighborhood Tabulation Areas (NTAs) - Tabular_20231204.geojson') as f:
-        nycCensusBlocks = geojson.load(f)
-        print("Found features:", len(nycCensusBlocks['features']))
+        ntaData = geojson.load(f)
+        print("Found features:", len(ntaData['features']))
 
     i = 1
     batchIndex = 0
-    for feature in nycCensusBlocks['features']:
+    for feature in ntaData['features']:
         # Use the python-geojson library to generate GeoJSON of a line from LAX to
         # JFK airports. Alternatively, you may define GeoJSON data directly, but it
         # must be converted to a string before loading it into BigQuery.
