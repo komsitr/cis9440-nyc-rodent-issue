@@ -376,7 +376,8 @@ class Program():
             | 'Load focus complaint types' >> beam.io.ReadFromBigQuery(
                 table=f'{self.GCLOUD_BIGQUERY_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.focus_complaint_type',
                 method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
-            | 'Extract complaint type value' >> beam.Map(lambda lookup: lookup['complaint_type'])
+            | 'Extract complaint type values' >> beam.Map(lambda lookup: lookup['complaint_type'])
+            | 'Distinct complaint types' >> beam.Distinct()
             | 'Generate NYC Open Data API pagination URLs' >> beam.ParDo(GenerateNYCOpenDataAPIUrls(
                 {'X-App-Token': self.NYC_OPENDATA_API_KEY, 'Accept': 'application/json'},
                 self.dataStartDate,

@@ -1,11 +1,12 @@
-﻿04F
-04K
-04L
-04M
-04N
-04O
-05A
-08A
-08B
-08C
-10B
+﻿violation_code,category
+04F,Sewage
+04K,Pests
+04L,Pests
+04M,Pests
+04N,Pests
+04O,Animal Waste
+05A,Sewage
+08A,Pests
+08B,Dirty Conditions
+08C,Pests
+10B,Sewage

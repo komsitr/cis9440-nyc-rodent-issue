@@ -1,43 +1,124 @@
-﻿Animal in a Park
-Commercial Disposal Complaint
-Dead Animal
-Dirty Condition
-Dirty Conditions
-DPR Internal
-Dumpster Complaint
-Encampment
-Food Establishment
-Highway Condition
-Homeless Encampment
-Homeless Person Assistance
-Homeless Street Condition
-Illegal Dumping
-Indoor Sewage
-Litter Basket Complaint
-Litter Basket Request
-Lot Condition
-Maintenance or Facility
-Missed Collection
-Missed Collection (All Materials)
-Mobile Food Vendor
-Municipal Parking Facility
-Obstruction
-Overflowing Litter Baskets
-Overflowing Recycling Baskets
-Recycling Basket Complaint
-Residential Disposal Complaint
-Rodent
-Sanitation Condition
-Sanitation Worker or Vehicle Complaint
-Sewer
-Sewer Maintenance
-Street Sweeping Complaint
-Sweeping/Inadequate
-Sweeping/Missed
-Sweeping/Missed-Inadequate
-Transfer Station Complaint
-Unsanitary Animal Facility
-Unsanitary Animal Pvt Property
-UNSANITARY CONDITION
-Unsanitary Pigeon Condition
-Water Drainage
+complaint_type,complaint_descriptor,category
+UNSANITARY CONDITION,PESTS,Pests
+Sanitation Condition,15 Street Cond/Dump-Out/Drop-Off,Dirty Conditions
+Rodent,Rat Sighting,Pests
+Sewer,Sewer Backup (Use Comments) (SA),Sewage
+Missed Collection (All Materials),1 Missed Collection,Dirty Conditions
+Homeless Person Assistance,,Homelessness
+Dirty Conditions,E3 Dirty Sidewalk,Dirty Conditions
+Sewer,Catch Basin Clogged/Flooding (Use Comments) (SC),Sewage
+Homeless Person Assistance,N/A,Homelessness
+Sanitation Condition,12 Dead Animals,Animal Waste
+Encampment,N/A,Homelessness
+Rodent,Condition Attracting Rodents,Pests
+Dirty Condition,Trash,Dirty Conditions
+Dirty Conditions,E3A Dirty Area/Alleyway,Dirty Conditions
+Missed Collection,Trash,Dirty Conditions
+Missed Collection (All Materials),2 Bulk-Missed Collection,Dirty Conditions
+Illegal Dumping,Removal Request,Dirty Conditions
+Rodent,Mouse Sighting,Pests
+Missed Collection (All Materials),1R Missed Recycling-All Materials,Dirty Conditions
+Dirty Conditions,E1 Improper Disposal,Dirty Conditions
+Maintenance or Facility,Garbage or Litter,Dirty Conditions
+Homeless Encampment,N/A,Homelessness
+Food Establishment,Rodents/Insects/Garbage,Pests
+Rodent,Signs of Rodents,Pests
+Dirty Conditions,E12 Illegal Dumping Surveillance,Dirty Conditions
+Missed Collection (All Materials),1RG Missed Recycling Paper,Dirty Conditions
+Dirty Conditions,E8 Canine Violation,Animal Waste
+Missed Collection (All Materials),1RB Missed Recycling - M/G/Pl,Dirty Conditions
+Missed Collection (All Materials),2R Bulk-Missed Recy Collection,Dirty Conditions
+UNSANITARY CONDITION,SEWAGE,Sewage
+Sewer,Sewer Odor (SA2),Sewage
+Missed Collection,Recycling - Paper/Metal/Glass/Rigid Plastic,Dirty Conditions
+Missed Collection,Bulky Trash,Dirty Conditions
+Dirty Conditions,E5 Loose Rubbish,Dirty Conditions
+Overflowing Litter Baskets,6 Overflowing Litter Baskets,Dirty Conditions
+Homeless Street Condition,N/A,Homelessness
+Dirty Conditions,E2 Receptacle Violation,Dirty Conditions
+Missed Collection,Recycling - Paper,Dirty Conditions
+Unsanitary Animal Pvt Property,Dog,Animal Waste
+Dirty Conditions,E11 Litter Surveillance,Dirty Conditions
+Illegal Dumping,Chronic Dumping,Dirty Conditions
+Maintenance or Facility,Rodent Sighting,Pests
+Street Sweeping Complaint,Inadequate Sweeping,Dirty Conditions
+Sweeping/Missed,3A Sweeping/Missed,Dirty Conditions
+Indoor Sewage,Sewage Odor,Sewage
+Unsanitary Pigeon Condition,Pigeon Waste,Animal Waste
+Missed Collection,Recycling - Metal/Glass/Rigid Plastic,Dirty Conditions
+Obstruction,Trash or Recycling,Dirty Conditions
+Dead Animal,Cat,Dirty Conditions
+Homeless Person Assistance,No Status Call,Homelessness
+Dirty Conditions,"E4 18"" Law",Dirty Conditions
+Highway Condition,Litter,Dirty Conditions
+Missed Collection (All Materials),1RO Missed Recycling Organics,Dirty Conditions
+Missed Collection,Bulky Recycling,Dirty Conditions
+Residential Disposal Complaint,Trash or Recycling Not Secure,Dirty Conditions
+Street Sweeping Complaint,Street Not Swept,Dirty Conditions
+Missed Collection,Compost,Dirty Conditions
+Sweeping/Missed-Inadequate,3 Sweeping/Missed-Inadequate,Dirty Conditions
+Residential Disposal Complaint,Waste Set Out Too Early or Too Late,Dirty Conditions
+Unsanitary Animal Pvt Property,Animal Waste,Animal Waste
+Unsanitary Animal Pvt Property,Cat,Animal Waste
+Animal in a Park,Dead Animal,Animal Waste
+Dirty Condition,Dog Waste,Animal Waste
+Litter Basket Request,New Basket,Dirty Conditions
+Unsanitary Animal Pvt Property,Animal Odor,Animal Waste
+Missed Collection,Trash and Bulky Trash,Dirty Conditions
+Residential Disposal Complaint,Waste Left in Front of Other Residence,Dirty Conditions
+Homeless Person Assistance,Status Call,Homelessness
+Dirty Conditions,E1A Litter Basket / Improper Use,Dirty Conditions
+Lot Condition,Trash,Dirty Conditions
+Indoor Sewage,Sewage Leak,Sewage
+Highway Condition,Dead Animal,Animal Waste
+Dead Animal,Raccoon,Animal Waste
+Missed Collection (All Materials),1C Uncollected Xmas Trees,Dirty Conditions
+Litter Basket Complaint,Overflowing,Dirty Conditions
+Litter Basket Request,Replacement Basket,Dirty Conditions
+Dead Animal,Rat or Mouse,Pests
+Sweeping/Inadequate,3B Sweeping/Inadequate,Dirty Conditions
+Sanitation Worker or Vehicle Complaint,Spilled Garbage,Dirty Conditions
+Dirty Conditions,E13 Throw-Out,Dirty Conditions
+Animal in a Park,Animal Waste,Animal Waste
+Dead Animal,Opossum,Animal Waste
+Dumpster Complaint,Overflowing,Dirty Conditions
+Dumpster Complaint,Blocking Sidewalk or Street,Dirty Conditions
+Sewer Maintenance,Backup,Sewage
+Homeless Person Assistance,Non-Chronic,Homelessness
+Dead Animal,Other,Animal Waste
+Dead Animal,Squirrel,Animal Waste
+Dead Animal,Bird,Animal Waste
+Commercial Disposal Complaint,Waste Left in Front of Residence,Dirty Conditions
+Dead Animal,Dog,Animal Waste
+Unsanitary Pigeon Condition,Pigeon Odor,Animal Waste
+Homeless Person Assistance,Chronic,Homelessness
+Food Establishment,Sewage,Sewage
+Unsanitary Animal Facility,Animal Odor,Animal Waste
+Missed Collection (All Materials),1L Missed Recycling Leaves,Dirty Conditions
+Residential Disposal Complaint,Storage Area Not Provided,Dirty Conditions
+Unsanitary Animal Facility,Animal Waste,Animal Waste
+Sewer Maintenance,Catch Basin Clogged,Sewage
+Mobile Food Vendor,Insects / Pests,Pests
+Litter Basket Complaint,Misuse,Dirty Conditions
+Dead Animal,Deer,Animal Waste
+Mobile Food Vendor,Garbage,Dirty Conditions
+Residential Disposal Complaint,Containers Left Out After Collection,Dirty Conditions
+Food Establishment,Pesticide,Pests
+Dirty Conditions,E7 Private Carter Spillage,Dirty Conditions
+Dumpster Complaint,Uncovered,Dirty Conditions
+Commercial Disposal Complaint,Waste Disposal,Dirty Conditions
+Overflowing Recycling Baskets,6R Overflowing Recycling Baskets,Dirty Conditions
+DPR Internal,Illegal Dumping,Dirty Conditions
+Water Drainage,Drain/Pipe Clogged,Sewage
+Recycling Basket Complaint,Overflowing,Dirty Conditions
+Municipal Parking Facility,"Dirt, Litter, Debris - Lot",Dirty Conditions
+Rodent,Rodent Bite - PCS Only,Pests
+Residential Disposal Complaint,Containers Set Out Too Early,Dirty Conditions
+Municipal Parking Facility,"Dirt, Litter, Debris - Garage",Dirty Conditions
+Unsanitary Condition,Pests,Pests
+Unsanitary Condition,Sewage,Sewage
+Encampment,,Homelessness
+Transfer Station Complaint,Insects or Rodents,Pests
+Transfer Station Complaint,Water or Sewer Runoff,Sewage
+Unsanitary Condition,Rodents/Mice,Pests
+Unsanitary Condition,Insects / Pests,Pests

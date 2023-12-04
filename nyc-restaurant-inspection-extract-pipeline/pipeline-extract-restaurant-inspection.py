@@ -258,15 +258,16 @@ class Program():
         one_day = timedelta(days=1)
         ny_today = utc_now.astimezone(nyc_tz).date()
         ny_yesterday = ny_today - one_day
+        ny_twoDaysBefore = ny_yesterday - one_day
 
-        self.dataEndDate = ny_today.strftime(DATE_TIME_FORMAT)
+        self.dataEndDate = ny_yesterday.strftime(DATE_TIME_FORMAT)
         
         if mode == 'snapshot':
             self.destWriteDisposition = beam.io.BigQueryDisposition.WRITE_TRUNCATE
             self.dataStartDate = '2016-01-01T00:00:00'
         else:
             self.destWriteDisposition = beam.io.BigQueryDisposition.WRITE_APPEND
-            self.dataStartDate = ny_yesterday.strftime(DATE_TIME_FORMAT)
+            self.dataStartDate = ny_twoDaysBefore.strftime(DATE_TIME_FORMAT)
 
     def main(self, argv=None):
         parser = argparse.ArgumentParser()
