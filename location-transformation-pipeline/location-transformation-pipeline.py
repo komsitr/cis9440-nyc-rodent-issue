@@ -355,8 +355,8 @@ class Program():
         
         if mode == 'snapshot':
             self.destWriteDisposition = beam.io.BigQueryDisposition.WRITE_TRUNCATE
-            self.data311RequestStartDate = '2020-01-01 00:00:00'
-            self.dataRestaurantInspectionStartDate = '2020-01-01 00:00:00'
+            self.data311RequestStartDate = '1900-01-01 00:00:00'
+            self.dataRestaurantInspectionStartDate = '1900-01-01 00:00:00'
             # testing value
             # self.data311RequestStartDate = '2023-12-03 00:00:00'
             # self.dataRestaurantInspectionStartDate = '2023-12-01 00:00:00'
@@ -478,72 +478,72 @@ class Program():
             # -------------------------------------------------------------
             # Branch 2: Restaurant Inspection
             # -------------------------------------------------------------
-            # restaurant_inspection_main = (p
-            # | 'Read Restaurant Inspection' >> beam.io.ReadFromBigQuery(
-            #     query="SELECT * FROM " + self.GCLOUD_BIGQUERY_DATASET + ".nyc_restaurant_inspection WHERE inspection_date > CAST('{startDate}' AS DATETIME) AND inspection_date < CAST('{endDate}' AS DATETIME)".format(startDate=self.dataRestaurantInspectionStartDate, endDate=self.dataRestaurantInspectionEndDate),
-            #     method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
-            # )
+            restaurant_inspection_main = (p
+            | 'Read Restaurant Inspection' >> beam.io.ReadFromBigQuery(
+                query="SELECT * FROM " + self.GCLOUD_BIGQUERY_DATASET + ".nyc_restaurant_inspection WHERE inspection_date > CAST('{startDate}' AS DATETIME) AND inspection_date < CAST('{endDate}' AS DATETIME)".format(startDate=self.dataRestaurantInspectionStartDate, endDate=self.dataRestaurantInspectionEndDate),
+                method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
+            )
 
-            # block_inspect_pipeline = (restaurant_inspection_main
-            # | 'Resolve ResIns NYC Block' >> beam.ParDo(ResolveNYCBlock(), blockMapDict=beam.pvalue.AsDict(blockMap), boroughColName='boro')
-            # | 'Build ResIns Block tuple' >> beam.Map(lambda record: (record['camis'], record))
-            # )
+            block_inspect_pipeline = (restaurant_inspection_main
+            | 'Resolve ResIns NYC Block' >> beam.ParDo(ResolveNYCBlock(), blockMapDict=beam.pvalue.AsDict(blockMap), boroughColName='boro')
+            | 'Build ResIns Block tuple' >> beam.Map(lambda record: (record['camis'], record))
+            )
 
-            # tract_inspect_pipeline = (restaurant_inspection_main
-            # | 'Resolve ResIns NYC Tract' >> beam.ParDo(ResolveNYCTract(), tractMapDict=beam.pvalue.AsDict(tractMap), boroughColName='boro')
-            # | 'Build ResIns Tract tuple' >> beam.Map(lambda record: (record['camis'], record))
-            # )
+            tract_inspect_pipeline = (restaurant_inspection_main
+            | 'Resolve ResIns NYC Tract' >> beam.ParDo(ResolveNYCTract(), tractMapDict=beam.pvalue.AsDict(tractMap), boroughColName='boro')
+            | 'Build ResIns Tract tuple' >> beam.Map(lambda record: (record['camis'], record))
+            )
 
-            # nta_inspect_pipeline = (restaurant_inspection_main
-            # | 'Resolve ResIns NYC NTA' >> beam.ParDo(ResolveNYCNTA(), ntaMapDict=beam.pvalue.AsDict(ntaMap), boroughColName='boro')
-            # | 'Build ResIns NTA tuple' >> beam.Map(lambda record: (record['camis'], record))
-            # )
+            nta_inspect_pipeline = (restaurant_inspection_main
+            | 'Resolve ResIns NYC NTA' >> beam.ParDo(ResolveNYCNTA(), ntaMapDict=beam.pvalue.AsDict(ntaMap), boroughColName='boro')
+            | 'Build ResIns NTA tuple' >> beam.Map(lambda record: (record['camis'], record))
+            )
 
-            # ((block_inspect_pipeline, tract_inspect_pipeline, nta_inspect_pipeline)
-            #  | 'Merge restaurant inspection location results' >> beam.CoGroupByKey()
-            #  | 'Map restaurant inspection result to entity' >> beam.ParDo(MapRestaurantInspectionResultToBigQueryRecord())
-            #  | 'Save to restaurant inspection location staging table' >> beam.io.WriteToBigQuery(
-            #     stage_nyc_restaurant_inspection_location_table_spec,
-            #     schema=STAGE_RESTAURANT_INSPECTION_LOCATION_TABLE_SCHEMA,
-            #     write_disposition=self.destWriteDisposition,
-            #     create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED)
-            # )
+            ((block_inspect_pipeline, tract_inspect_pipeline, nta_inspect_pipeline)
+             | 'Merge restaurant inspection location results' >> beam.CoGroupByKey()
+             | 'Map restaurant inspection result to entity' >> beam.ParDo(MapRestaurantInspectionResultToBigQueryRecord())
+             | 'Save to restaurant inspection location staging table' >> beam.io.WriteToBigQuery(
+                stage_nyc_restaurant_inspection_location_table_spec,
+                schema=STAGE_RESTAURANT_INSPECTION_LOCATION_TABLE_SCHEMA,
+                write_disposition=self.destWriteDisposition,
+                create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED)
+            )
 
-            # # -------------------------------------------------------------
-            # # Branch 3: Open Restaurant - Only snapshot mode
-            # # -------------------------------------------------------------
-            # if known_args.mode == 'snapshot':
-            #     open_restaurant_main = (p
-            #     | 'Read Open Restaurant' >> beam.io.ReadFromBigQuery(
-            #         table=f'{self.GCLOUD_BIGQUERY_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.nyc_open_restaurant_applications_historic',
-            #         method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
-            #     | 'Filter only record with geolocation' >> beam.Filter(lambda record: (record['latitude'] is not None) and (record['longitude'] is not None))
-            #     )
+            # -------------------------------------------------------------
+            # Branch 3: Open Restaurant - Only snapshot mode
+            # -------------------------------------------------------------
+            if known_args.mode == 'snapshot':
+                open_restaurant_main = (p
+                | 'Read Open Restaurant' >> beam.io.ReadFromBigQuery(
+                    table=f'{self.GCLOUD_BIGQUERY_PROJECT_ID}:{self.GCLOUD_BIGQUERY_DATASET}.nyc_open_restaurant_applications_historic',
+                    method=beam.io.ReadFromBigQuery.Method.DIRECT_READ)
+                | 'Filter only record with geolocation' >> beam.Filter(lambda record: (record['latitude'] is not None) and (record['longitude'] is not None))
+                )
 
-            #     block_openres_pipeline = (open_restaurant_main
-            #     | 'Resolve OpenRes NYC Block' >> beam.ParDo(ResolveNYCBlock(), blockMapDict=beam.pvalue.AsDict(blockMap), boroughColName='borough')
-            #     | 'Build OpenRes Block tuple' >> beam.Map(lambda record: (record['objectid'], record))
-            #     )
+                block_openres_pipeline = (open_restaurant_main
+                | 'Resolve OpenRes NYC Block' >> beam.ParDo(ResolveNYCBlock(), blockMapDict=beam.pvalue.AsDict(blockMap), boroughColName='borough')
+                | 'Build OpenRes Block tuple' >> beam.Map(lambda record: (record['objectid'], record))
+                )
 
-            #     tract_openres_pipeline = (open_restaurant_main
-            #     | 'Resolve OpenRes NYC Tract' >> beam.ParDo(ResolveNYCTract(), tractMapDict=beam.pvalue.AsDict(tractMap), boroughColName='borough')
-            #     | 'Build OpenRes Tract tuple' >> beam.Map(lambda record: (record['objectid'], record))
-            #     )
+                tract_openres_pipeline = (open_restaurant_main
+                | 'Resolve OpenRes NYC Tract' >> beam.ParDo(ResolveNYCTract(), tractMapDict=beam.pvalue.AsDict(tractMap), boroughColName='borough')
+                | 'Build OpenRes Tract tuple' >> beam.Map(lambda record: (record['objectid'], record))
+                )
 
-            #     nta_openres_pipeline = (open_restaurant_main
-            #     | 'Resolve OpenRes NYC NTA' >> beam.ParDo(ResolveNYCNTA(), ntaMapDict=beam.pvalue.AsDict(ntaMap), boroughColName='borough')
-            #     | 'Build OpenRes NTA tuple' >> beam.Map(lambda record: (record['objectid'], record))
-            #     )
+                nta_openres_pipeline = (open_restaurant_main
+                | 'Resolve OpenRes NYC NTA' >> beam.ParDo(ResolveNYCNTA(), ntaMapDict=beam.pvalue.AsDict(ntaMap), boroughColName='borough')
+                | 'Build OpenRes NTA tuple' >> beam.Map(lambda record: (record['objectid'], record))
+                )
 
-            #     ((block_openres_pipeline, tract_openres_pipeline, nta_openres_pipeline)
-            #     | 'Merge open restaurant location results' >> beam.CoGroupByKey()
-            #     | 'Map open restaurant result to entity' >> beam.ParDo(MapOpenRestaurantResultToBigQueryRecord())
-            #     | 'Save to open restaurant location staging table' >> beam.io.WriteToBigQuery(
-            #         stage_nyc_open_restaurant_location_table_spec,
-            #         schema=STAGE_OPEN_RESTAURANT_LOCATION_TABLE_SCHEMA,
-            #         write_disposition=self.destWriteDisposition,
-            #         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED)
-            #     )
+                ((block_openres_pipeline, tract_openres_pipeline, nta_openres_pipeline)
+                | 'Merge open restaurant location results' >> beam.CoGroupByKey()
+                | 'Map open restaurant result to entity' >> beam.ParDo(MapOpenRestaurantResultToBigQueryRecord())
+                | 'Save to open restaurant location staging table' >> beam.io.WriteToBigQuery(
+                    stage_nyc_open_restaurant_location_table_spec,
+                    schema=STAGE_OPEN_RESTAURANT_LOCATION_TABLE_SCHEMA,
+                    write_disposition=self.destWriteDisposition,
+                    create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED)
+                )
 
 
         # Save batch execution log
