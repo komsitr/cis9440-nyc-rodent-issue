@@ -1,0 +1,125 @@
+﻿ComplaintID,ComplaintType,ComplaintDescription,Category
+af95fc47-71be-4ffc-8cde-ac673a468583,UNSANITARY CONDITION,PESTS,Pests
+d38e98b5-6cde-41dd-84df-bdb621e876cc,Sanitation Condition,15 Street Cond/Dump-Out/Drop-Off,Dirty Conditions
+f695cb69-aa5a-44b4-ac7d-c08f7b3c4443,Rodent,Rat Sighting,Pests
+2fae45df-8b43-45f2-b3ac-4eaefe4231e7,Sewer,Sewer Backup (Use Comments) (SA),Sewage
+ea8b41b7-140b-411a-bb0b-41af459047e8,Missed Collection (All Materials),1 Missed Collection,Dirty Conditions
+8bec11e9-3dee-401c-95ea-5ef7399cafbf,Homeless Person Assistance,N/A,Homelessness
+65a3b87d-a1d8-4213-b4c4-bde9303ae11e,Dirty Conditions,E3 Dirty Sidewalk,Dirty Conditions
+0f712ca5-4ff1-444d-af69-22c60cdcfcd2,Sewer,Catch Basin Clogged/Flooding (Use Comments) (SC),Sewage
+3defb5b2-abd9-415d-81c2-16426d844fad,Homeless Person Assistance,N/A,Homelessness
+680f4957-1f84-4add-b728-911b67efd920,Sanitation Condition,12 Dead Animals,Animal Waste
+3224625c-1952-45b3-a755-e1dc36924c88,Encampment,N/A,Homelessness
+3512d5c4-8572-4457-85ce-a4b9a5070d95,Rodent,Condition Attracting Rodents,Pests
+93c80b4b-dd02-4059-99ee-3b5eb286061c,Dirty Condition,Trash,Dirty Conditions
+e7263d63-ae72-4579-8c23-4c6854768c49,Dirty Conditions,E3A Dirty Area/Alleyway,Dirty Conditions
+20009c80-dc69-4d9f-87f5-06398e751254,Missed Collection,Trash,Dirty Conditions
+c226bc77-d53c-4c6a-be80-7b002b54b473,Missed Collection (All Materials),2 Bulk-Missed Collection,Dirty Conditions
+2f4f0b66-a870-42e1-a27b-8f4129514391,Illegal Dumping,Removal Request,Dirty Conditions
+e1680513-ac2b-43ff-acad-e18be07bb0bd,Rodent,Mouse Sighting,Pests
+e298b689-87f5-4171-93e2-3031c0f3bc46,Missed Collection (All Materials),1R Missed Recycling-All Materials,Dirty Conditions
+c56f4df3-d9b8-42d1-be60-34e0867c5eaf,Dirty Conditions,E1 Improper Disposal,Dirty Conditions
+fc84d26a-3627-4d11-8be7-08e49a94a50e,Maintenance or Facility,Garbage or Litter,Dirty Conditions
+64dff70e-c1e5-4e2d-88b4-9a36a9267fec,Homeless Encampment,N/A,Homelessness
+7855b3c1-5e47-47c7-b55f-ce2a95ec4b58,Food Establishment,Rodents/Insects/Garbage,Pests
+1876e215-5600-4698-998e-534747de6bdb,Rodent,Signs of Rodents,Pests
+483b130c-1c45-488c-9b0d-7db67c2d96eb,Dirty Conditions,E12 Illegal Dumping Surveillance,Dirty Conditions
+33caa41b-2d5e-4ca3-8235-9f2662cb8365,Missed Collection (All Materials),1RG Missed Recycling Paper,Dirty Conditions
+639fc208-d578-4db3-b1e4-bff20e0371d6,Dirty Conditions,E8 Canine Violation,Animal Waste
+746cebcd-162d-4c91-b41f-5d7e3c53acf1,Missed Collection (All Materials),1RB Missed Recycling - M/G/Pl,Dirty Conditions
+f326a110-66ee-43b9-86cb-5997406249b0,Missed Collection (All Materials),2R Bulk-Missed Recy Collection,Dirty Conditions
+7a72beae-e023-410d-8832-677ee40ba4f4,UNSANITARY CONDITION,SEWAGE,Sewage
+015540f4-b369-4ec7-8475-5385ea0e3f9b,Sewer,Sewer Odor (SA2),Sewage
+f0d41383-1bc1-46c4-8581-98d6fd2481bd,Missed Collection,Recycling - Paper/Metal/Glass/Rigid Plastic,Dirty Conditions
+aed0b8f1-00c7-4434-9586-d9e3fcebaed0,Missed Collection,Bulky Trash,Dirty Conditions
+45678b2d-da49-4e24-b80f-6bae96103a0d,Dirty Conditions,E5 Loose Rubbish,Dirty Conditions
+28557447-f128-4f47-9472-bdb21123c56a,Overflowing Litter Baskets,6 Overflowing Litter Baskets,Dirty Conditions
+d527266a-f755-45da-bfdc-a8d362d68175,Homeless Street Condition,N/A,Homelessness
+4d36c391-6a99-449f-9e83-1f0432e137c1,Dirty Conditions,E2 Receptacle Violation,Dirty Conditions
+5a4cb1bf-3d58-436e-930c-618b4bdea54f,Missed Collection,Recycling - Paper,Dirty Conditions
+0efbd883-a1c1-4a53-b2af-bb7f74c24a1d,Unsanitary Animal Pvt Property,Dog,Animal Waste
+db25f779-2530-414f-8580-96e8b0d88cba,Dirty Conditions,E11 Litter Surveillance,Dirty Conditions
+5b9fcf14-2dd6-4270-bf7e-0d8d4cd45a41,Illegal Dumping,Chronic Dumping,Dirty Conditions
+4ee3edfa-891b-496a-bb71-313a68d01bb4,Maintenance or Facility,Rodent Sighting,Pests
+f8064883-64ac-469d-9e7d-fd89b4b7141b,Street Sweeping Complaint,Inadequate Sweeping,Dirty Conditions
+1c6cf4bd-89a5-47d7-afda-e96b859271c9,Sweeping/Missed,3A Sweeping/Missed,Dirty Conditions
+e772582d-1443-4ae5-b8e7-b26d99401c2f,Indoor Sewage,Sewage Odor,Sewage
+68ae1a36-511f-47d5-9c1e-18939a8a668f,Unsanitary Pigeon Condition,Pigeon Waste,Animal Waste
+d9c95efe-b45e-4fd1-8221-56e7d216cbda,Missed Collection,Recycling - Metal/Glass/Rigid Plastic,Dirty Conditions
+58ee8c7c-c799-4f36-ad92-a99dffde2308,Obstruction,Trash or Recycling,Dirty Conditions
+cf5eaa54-d0ed-409c-b2ed-f4c9a11b57a9,Dead Animal,Cat,Dirty Conditions
+43a8bdca-bc35-4f7f-9803-7bede87dfaae,Homeless Person Assistance,No Status Call,Homelessness
+74aa9ad6-5272-4292-a3e1-c8631c218479,Dirty Conditions,"E4 18"" Law",Dirty Conditions
+0beecc7e-7749-4699-afd0-4425b7a69e44,Highway Condition,Litter,Dirty Conditions
+8e9b4212-c6d2-4cd1-be50-30c12b986db9,Missed Collection (All Materials),1RO Missed Recycling Organics,Dirty Conditions
+e6fc6639-8dd0-49a0-8105-38932335061c,Missed Collection,Bulky Recycling,Dirty Conditions
+bc45830a-41f2-4ba2-b413-93ddcc29772f,Residential Disposal Complaint,Trash or Recycling Not Secure,Dirty Conditions
+15d6539e-44f9-4823-aefc-695750b61dda,Street Sweeping Complaint,Street Not Swept,Dirty Conditions
+0aaf5a6d-b788-4b29-a10b-be65e9e0eeb3,Missed Collection,Compost,Dirty Conditions
+9bd1acf7-638d-43fd-97c7-ead684bedb55,Sweeping/Missed-Inadequate,3 Sweeping/Missed-Inadequate,Dirty Conditions
+d8ed4c43-9ad4-4865-b557-535641bf9412,Residential Disposal Complaint,Waste Set Out Too Early or Too Late,Dirty Conditions
+2cf7dc10-2c12-42cf-8f79-1fe676dfc9f8,Unsanitary Animal Pvt Property,Animal Waste,Animal Waste
+2efba96d-f518-4e42-93ba-4047e9f38eea,Unsanitary Animal Pvt Property,Cat,Animal Waste
+94b44b8b-f642-4b48-a502-cf6fef0c4a4b,Animal in a Park,Dead Animal,Animal Waste
+0b0cccf0-0aa6-4b69-af26-264403b8accd,Dirty Condition,Dog Waste,Animal Waste
+984ac49f-6bc8-495d-b773-264a83e5a557,Litter Basket Request,New Basket,Dirty Conditions
+dfe5de05-2c89-4322-b2e0-758a45774561,Unsanitary Animal Pvt Property,Animal Odor,Animal Waste
+cc9213dc-72f3-44e4-a097-5862ce9c03bc,Missed Collection,Trash and Bulky Trash,Dirty Conditions
+81011fea-3e1b-4d9f-8944-399babc46104,Residential Disposal Complaint,Waste Left in Front of Other Residence,Dirty Conditions
+7732dad4-3d20-4b53-89c7-85b21be298ad,Homeless Person Assistance,Status Call,Homelessness
+cad20aba-1520-4c05-a12d-a29ebbdcf45e,Dirty Conditions,E1A Litter Basket / Improper Use,Dirty Conditions
+42de4c47-95a6-4a24-b8f0-9ac67653b082,Lot Condition,Trash,Dirty Conditions
+d206e73c-8037-40fa-85ac-f21ef108d945,Indoor Sewage,Sewage Leak,Sewage
+fe09651f-acef-426f-8f2f-dcc80b2e3908,Highway Condition,Dead Animal,Animal Waste
+6d94c48d-078f-4737-b6fb-6cec5c87aa51,Dead Animal,Raccoon,Animal Waste
+41722801-5a7c-40c8-bdd2-6b649ba5d772,Missed Collection (All Materials),1C Uncollected Xmas Trees,Dirty Conditions
+d88dc0a2-5b63-4be4-843e-b03e1de0f89c,Litter Basket Complaint,Overflowing,Dirty Conditions
+1f702967-48cc-46c7-87b6-ef69d7962c0f,Litter Basket Request,Replacement Basket,Dirty Conditions
+84c31413-5f38-4da5-997c-e9c09ead9fdf,Dead Animal,Rat or Mouse,Pests
+81098482-730e-4b48-8dac-1357a93df719,Sweeping/Inadequate,3B Sweeping/Inadequate,Dirty Conditions
+2f4b9e5a-b91e-4b30-9f1f-7166f43285fa,Sanitation Worker or Vehicle Complaint,Spilled Garbage,Dirty Conditions
+ef441076-7816-4e89-aa94-24575a10a859,Dirty Conditions,E13 Throw-Out,Dirty Conditions
+e6da2391-b647-48f9-a6d1-ed8f9c773b53,Animal in a Park,Animal Waste,Animal Waste
+5dcde7bc-e6d5-497e-a082-d336206ac63d,Dead Animal,Opossum,Animal Waste
+3e9980da-594c-42bd-bf1b-81c7f1e858a6,Dumpster Complaint,Overflowing,Dirty Conditions
+123730db-572d-49d8-8aae-4fc3b1500be2,Dumpster Complaint,Blocking Sidewalk or Street,Dirty Conditions
+29a936de-302e-4fad-8468-96105ab44f4e,Sewer Maintenance,Backup,Sewage
+8a260c87-2125-4b8c-895f-e13d2c6a7886,Homeless Person Assistance,Non-Chronic,Homelessness
+d43eb692-afc5-4438-90fd-23156c25db7b,Dead Animal,Other,Animal Waste
+887ed8bc-e45e-4ee5-b686-0e3c0a21d711,Dead Animal,Squirrel,Animal Waste
+9d5f05df-cb1e-4a25-a130-b4f8eaa4adbe,Dead Animal,Bird,Animal Waste
+636767f2-5eb0-48ca-a782-11d68210b531,Commercial Disposal Complaint,Waste Left in Front of Residence,Dirty Conditions
+9afc0ae9-71de-49ee-bee4-95b3604ecc71,Dead Animal,Dog,Animal Waste
+280cfab1-6ba9-4c97-a4c0-cae99c12e6cb,Unsanitary Pigeon Condition,Pigeon Odor,Animal Waste
+6e2f1498-3cee-40b8-a96b-16af2df10ce0,Homeless Person Assistance,Chronic,Homelessness
+7adae5d5-1456-44b8-a5cb-43e76c43424c,Food Establishment,Sewage,Sewage
+431c871d-8390-4cc0-99e6-533c1aaa704b,Unsanitary Animal Facility,Animal Odor,Animal Waste
+15133cc8-c853-4381-8e7e-82c80a787c8f,Missed Collection (All Materials),1L Missed Recycling Leaves,Dirty Conditions
+509af8c2-fa92-4d62-87c0-c24816100a92,Residential Disposal Complaint,Storage Area Not Provided,Dirty Conditions
+9e0bd4a4-42d2-405d-924f-8e80c921ddf3,Unsanitary Animal Facility,Animal Waste,Animal Waste
+ea1f1bcf-c0e8-4ff4-a589-c78e2111daf9,Sewer Maintenance,Catch Basin Clogged,Sewage
+49d0b661-6609-417e-9007-954226c4b6f0,Mobile Food Vendor,Insects / Pests,Pests
+42a66290-f54f-4cb8-8f31-9355535f185a,Litter Basket Complaint,Misuse,Dirty Conditions
+5df7d12d-98c4-4c6d-9b95-4cc74bb9126d,Dead Animal,Deer,Animal Waste
+c76c20ed-650a-46cd-b557-378167c944f5,Mobile Food Vendor,Garbage,Dirty Conditions
+0114b177-0185-4cc1-abaf-01639987106f,Residential Disposal Complaint,Containers Left Out After Collection,Dirty Conditions
+62643ca1-515b-472a-8f5e-12e1eca14989,Food Establishment,Pesticide,Pests
+c47a03a6-deae-4979-a267-461295240bc9,Dirty Conditions,E7 Private Carter Spillage,Dirty Conditions
+12781cb0-24f2-4452-ae84-ec21b8b38874,Dumpster Complaint,Uncovered,Dirty Conditions
+feac269e-3e22-451c-99ea-761caf6e990e,Commercial Disposal Complaint,Waste Disposal,Dirty Conditions
+8b5251c6-f71a-4617-837f-37315ad7893c,Overflowing Recycling Baskets,6R Overflowing Recycling Baskets,Dirty Conditions
+1d1ef3dc-a13f-4620-a362-d266d4e72214,DPR Internal,Illegal Dumping,Dirty Conditions
+00bf5a3e-7d5c-4e4c-8911-cf11f2016b8e,Water Drainage,Drain/Pipe Clogged,Sewage
+43d2b807-792b-4b9b-be1f-ab717c47dba5,Recycling Basket Complaint,Overflowing,Dirty Conditions
+519cc675-1757-45e7-9a9d-b817db13ff46,Municipal Parking Facility,"Dirt, Litter, Debris - Lot",Dirty Conditions
+e5eb8640-b5c8-46e5-9ae1-0fa5ac4522c6,Rodent,Rodent Bite - PCS Only,Pests
+9ab7c347-76cf-4084-bb1a-ee3bbb319a9c,Residential Disposal Complaint,Containers Set Out Too Early,Dirty Conditions
+8d8c05bb-be41-4748-959c-18c5fe98ade6,Municipal Parking Facility,"Dirt, Litter, Debris - Garage",Dirty Conditions
+4623e84d-b21f-43b4-b71e-dba5f18bb308,Unsanitary Condition,Pests,Pests
+cbe09c4d-6f26-4d07-b2d8-d99fc12e6bf9,Unsanitary Condition,Sewage,Sewage
+947b26ed-060a-4bc2-b56e-5c239e17f2de,Encampment,N/A,Homelessness
+8328fde5-3010-4bfc-bc01-4c022779e786,Transfer Station Complaint,Insects or Rodents,Pests
+3ac61b6d-191a-487f-bb96-f7e064d6f2ea,Transfer Station Complaint,Water or Sewer Runoff,Sewage
+94e2332f-8c36-4843-90ac-9bacc7cd86fa,Unsanitary Condition,Rodents/Mice,Pests
+fe47c7ef-d262-4be4-a62e-cd1fc4d7b2a9,Unsanitary Condition,Insects / Pests,Pests
+eef12592-5397-4c54-a56d-99fb15fed45d,Not Interested,N/A,None
