@@ -35,7 +35,7 @@ def main():
     table = bigquery_client.create_table(table)
 
     rows = []
-    with open('2020 Neighborhood Tabulation Areas (NTAs) - Tabular_20231204.geojson') as f:
+    with open('2020-nyc-nta.geojson') as f:
         ntaData = geojson.load(f)
         print("Found features:", len(ntaData['features']))
 

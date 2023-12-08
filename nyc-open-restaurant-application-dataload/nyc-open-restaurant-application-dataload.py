@@ -54,7 +54,7 @@ def main():
     table = bigquery_client.create_table(table)
 
     rows = []
-    with open('Open_Restaurant_Applications__Historic_.csv') as f:
+    with open('Open_Restaurant_Applications__Historic__20231204.csv') as f:
         csv_reader = csv.DictReader(f, delimiter=',')
 
         i = 1
@@ -88,7 +88,6 @@ def main():
                 'landmarkdistrict_terms': get_string_value(row, 'landmarkdistrict_terms'),
                 'healthcompliance_terms': get_string_value(row, 'healthcompliance_terms'),
                 'time_of_submission': get_date_value(row, 'time_of_submission'),
-                'sla_license_type': get_string_value(row, 'sla_license_type'),
                 'latitude': get_float_value(row, 'latitude'),
                 'longitude': get_float_value(row, 'longitude'),
                 'community_board': get_string_value(row, 'community_board'),

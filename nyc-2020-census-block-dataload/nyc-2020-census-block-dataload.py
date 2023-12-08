@@ -32,7 +32,7 @@ def main():
     table = bigquery_client.create_table(table)
 
     rows = []
-    with open('2020 Census Blocks - Tabular_20231203.geojson') as f:
+    with open('2020-census-block-tracts.geojson') as f:
         nycCensusBlocks = geojson.load(f)
         print("Found features:", len(nycCensusBlocks['features']))
 
