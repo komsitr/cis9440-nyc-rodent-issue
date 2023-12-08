@@ -37,3 +37,9 @@ The project analyzes NYC 311 Service Requests data to find insights from the rod
 - **nyc-restaurant-inspection-extract-pipeline**
   - Extract Restaurant Inspection data from API to BigQuery
   - Support snapshot and incremental load
+- **sql**
+  SQL files for Schedule SQL Queries in BigQuery to refresh or incrementally load data into the tables
+- **schemas**
+  Schemas for all BigQuery tables
+- **data**
+  CSV for static and historical data
