@@ -1,0 +1,159 @@
+{
+  "creationTime": "1700846941877",
+  "etag": "RDOXRPaQae9fPzwm6FjvjQ==",
+  "id": "avid-garage-399623:cis9440_project.nyc_restaurant_inspection",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701927371709",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "30787863",
+  "numActivePhysicalBytes": "3269789",
+  "numBytes": "30787863",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "69825",
+  "numTimeTravelPhysicalBytes": "1629218",
+  "numTotalLogicalBytes": "30787863",
+  "numTotalPhysicalBytes": "3269789",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "camis",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "dba",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "boro",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "building",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "street",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "zipcode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "phone",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "cuisine_description",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "inspection_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "action",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "violation_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "violation_description",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "critical_flag",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "score",
+        "type": "NUMERIC"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "grade",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "grade_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "record_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "inspection_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "latitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "longitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "community_board",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "council_district",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "census_tract",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bin",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bbl",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "nta",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_restaurant_inspection",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_restaurant_inspection"
+  },
+  "type": "TABLE"
+}

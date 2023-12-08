@@ -1,0 +1,39 @@
+{
+  "creationTime": "1701614879252",
+  "etag": "AC6qllkIzjnkdmRSGT5JKw==",
+  "id": "avid-garage-399623:cis9440_project.focus_violation_code",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701681643499",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "153",
+  "numActivePhysicalBytes": "12348",
+  "numBytes": "153",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "11",
+  "numTimeTravelPhysicalBytes": "10771",
+  "numTotalLogicalBytes": "153",
+  "numTotalPhysicalBytes": "12348",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "violation_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "category",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/focus_violation_code",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "focus_violation_code"
+  },
+  "type": "TABLE"
+}

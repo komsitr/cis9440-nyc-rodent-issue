@@ -1,0 +1,79 @@
+{
+  "creationTime": "1701687740286",
+  "etag": "09nloOcYb/1rxwZfLOGCSw==",
+  "id": "avid-garage-399623:cis9440_project.nyc_2020_population_blocks",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701687740286",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "2984426",
+  "numActivePhysicalBytes": "289607",
+  "numBytes": "2984426",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "37990",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "2984426",
+  "numTotalPhysicalBytes": "289607",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "Year",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "GeogType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "FIPSCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "BoroCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "GeogName",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "GeoID",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Pop1",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Male",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Fem",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "LandAcres",
+        "type": "FLOAT"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_2020_population_blocks",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_2020_population_blocks"
+  },
+  "type": "TABLE"
+}

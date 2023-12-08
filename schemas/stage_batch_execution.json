@@ -1,0 +1,44 @@
+{
+  "creationTime": "1701690877735",
+  "etag": "YsvxtiFpS/VpV6weBbFgqA==",
+  "id": "avid-garage-399623:cis9440_project.stage_batch_execution",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1702018809079",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "2456",
+  "numActivePhysicalBytes": "11233",
+  "numBytes": "2456",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "50",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "2456",
+  "numTotalPhysicalBytes": "11233",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "job_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "latest_record_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "execution_date",
+        "type": "DATETIME"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/stage_batch_execution",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "stage_batch_execution"
+  },
+  "type": "TABLE"
+}

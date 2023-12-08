@@ -1,0 +1,89 @@
+{
+  "creationTime": "1701668133049",
+  "etag": "WnWs6UJCsMYYl/CZGkndrQ==",
+  "id": "avid-garage-399623:cis9440_project.nyc_2020_neighborhood",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701671799781",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "2568796",
+  "numActivePhysicalBytes": "751601",
+  "numBytes": "2568796",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "262",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "2568796",
+  "numTotalPhysicalBytes": "751601",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "the_geom",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "BoroCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "BoroName",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "CountyFIPS",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NTA2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NTAName",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NTAAbbrev",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NTAType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "CDTA2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "CDTAName",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Shape_Leng",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Shape_Area",
+        "type": "FLOAT"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_2020_neighborhood",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_2020_neighborhood"
+  },
+  "type": "TABLE"
+}

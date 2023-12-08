@@ -1,0 +1,204 @@
+{
+  "creationTime": "1701710177669",
+  "etag": "encghxXT2teSudvlL0g/LQ==",
+  "id": "avid-garage-399623:cis9440_project.nyc_open_restaurant_applications_historic",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701713840692",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "4859021",
+  "numActivePhysicalBytes": "1568375",
+  "numBytes": "4859021",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "14428",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "4859021",
+  "numTotalPhysicalBytes": "1568375",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "objectid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "globalid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "seating_interest_sidewalk",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "restaurant_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "legal_business_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "doing_business_as_dba",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bulding_number",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "street",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "zip",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "business_address",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "food_service_establishment",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sidewalk_dimensions_length",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sidewalk_dimensions_width",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sidewalk_dimensions_area",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "roadway_dimensions_length",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "roadway_dimensions_width",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "roadway_dimensions_area",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "approved_for_sidewalk_seating",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "approved_for_roadway_seating",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "qualify_alcohol",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sla_serial_number",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sla_license_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "landmark_district_or_building",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "landmarkdistrict_terms",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "healthcompliance_terms",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "time_of_submission",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "latitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "longitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "community_board",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "council_district",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "census_tract",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bin",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bbl",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "nta",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_open_restaurant_applications_historic",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_open_restaurant_applications_historic"
+  },
+  "type": "TABLE"
+}

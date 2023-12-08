@@ -1,0 +1,194 @@
+{
+  "creationTime": "1700838851175",
+  "etag": "G8Y33xcAoJXsnNgs0ThALw==",
+  "id": "avid-garage-399623:cis9440_project.nyc_311_service_request",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701927375702",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "1624734082",
+  "numActivePhysicalBytes": "376573572",
+  "numBytes": "1624734082",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "3569229",
+  "numTimeTravelPhysicalBytes": "163204779",
+  "numTotalLogicalBytes": "1624734082",
+  "numTotalPhysicalBytes": "376573572",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "unique_key",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "created_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "closed_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "complaint_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "descriptor",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "location_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "incident_zip",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "incident_address",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "street_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "cross_street_1",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "cross_street_2",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "intersection_street_1",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "intersection_street_2",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "address_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "city",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "landmark",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "facility_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "due_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "resolution_description",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "resolution_action_updated_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "community_board",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bbl",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "x_coordinate_state_plane",
+        "type": "NUMERIC"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "y_coordinate_state_plane",
+        "type": "NUMERIC"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "open_data_channel_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "park_facility_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "park_borough",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "latitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "longitude",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "compute_zip",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "compute_borough_boundaries",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_311_service_request",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_311_service_request"
+  },
+  "type": "TABLE"
+}

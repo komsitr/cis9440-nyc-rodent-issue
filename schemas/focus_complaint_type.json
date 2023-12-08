@@ -1,0 +1,44 @@
+{
+  "creationTime": "1701614074615",
+  "etag": "JKPlvyLW8dfrZWBM427zSQ==",
+  "id": "avid-garage-399623:cis9440_project.focus_complaint_type",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701614074615",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "6762",
+  "numActivePhysicalBytes": "3879",
+  "numBytes": "6762",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "123",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "6762",
+  "numTotalPhysicalBytes": "3879",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "complaint_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "complaint_descriptor",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "category",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/focus_complaint_type",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "focus_complaint_type"
+  },
+  "type": "TABLE"
+}

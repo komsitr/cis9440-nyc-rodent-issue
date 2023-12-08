@@ -1,0 +1,71 @@
+{
+  "creationTime": "1701679177120",
+  "etag": "wK2jnJqo1TOftZtku1IGvQ==",
+  "id": "avid-garage-399623:cis9440_project.DimRestaurantViolation",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1702018806825",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "62629",
+  "numActivePhysicalBytes": "126977",
+  "numBytes": "62629",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "715",
+  "numTimeTravelPhysicalBytes": "101168",
+  "numTotalLogicalBytes": "62629",
+  "numTotalPhysicalBytes": "126977",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "RestaurantViolationID",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Cuisine",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "ViolationCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Category",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "StartDate",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "EndDate",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "IsCurrent",
+        "type": "INTEGER"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/DimRestaurantViolation",
+  "tableConstraints": {
+    "primaryKey": {
+      "columns": [
+        "RestaurantViolationID"
+      ]
+    }
+  },
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "DimRestaurantViolation"
+  },
+  "type": "TABLE"
+}

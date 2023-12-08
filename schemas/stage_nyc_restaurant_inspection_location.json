@@ -1,0 +1,89 @@
+{
+  "creationTime": "1701689947895",
+  "etag": "mDhOwkHOFpA8ClDnhN41mQ==",
+  "id": "avid-garage-399623:cis9440_project.stage_nyc_restaurant_inspection_location",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701730778378",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "2432684",
+  "numActivePhysicalBytes": "488817",
+  "numBytes": "2432684",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "18618",
+  "numTimeTravelPhysicalBytes": "251589",
+  "numTotalLogicalBytes": "2432684",
+  "numTotalPhysicalBytes": "488817",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "camis",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "inspection_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "neighborhood_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "neighborhood_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "zipcode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "tract_bct2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "tract_geoid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "block_bctcb2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "block_geoid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "locationType",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/stage_nyc_restaurant_inspection_location",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "stage_nyc_restaurant_inspection_location"
+  },
+  "type": "TABLE"
+}

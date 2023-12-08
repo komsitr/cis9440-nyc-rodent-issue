@@ -1,0 +1,86 @@
+{
+  "creationTime": "1701711764430",
+  "etag": "L5+8/5qx4r9fqkc5hHoCsw==",
+  "id": "avid-garage-399623:cis9440_project.DimLocation",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1702018806244",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "15993945",
+  "numActivePhysicalBytes": "10794453",
+  "numBytes": "15993945",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "121563",
+  "numTimeTravelPhysicalBytes": "7702081",
+  "numTotalLogicalBytes": "15993945",
+  "numTotalPhysicalBytes": "10794453",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "LocationID",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Borough",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "BoroughCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Neighborhood",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NeighborhoodCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "ZipCode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Tract",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Block",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "LocationType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "PopulationDensity",
+        "type": "FLOAT"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/DimLocation",
+  "tableConstraints": {
+    "primaryKey": {
+      "columns": [
+        "LocationID"
+      ]
+    }
+  },
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "DimLocation"
+  },
+  "type": "TABLE"
+}

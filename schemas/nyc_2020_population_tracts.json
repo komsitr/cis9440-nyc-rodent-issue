@@ -1,0 +1,89 @@
+{
+  "creationTime": "1701687865473",
+  "etag": "ABk2fVPqK3sMQ5Grijk/KA==",
+  "id": "avid-garage-399623:cis9440_project.nyc_2020_population_tracts",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701687865473",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "220008",
+  "numActivePhysicalBytes": "43920",
+  "numBytes": "220008",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "2717",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "220008",
+  "numTotalPhysicalBytes": "43920",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "Year",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "GeoType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Borough",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "GeoID",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "BCT2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "CDType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "NTAType",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Pop1",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Male",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "Fem",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "LandAcres",
+        "type": "FLOAT"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/nyc_2020_population_tracts",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "nyc_2020_population_tracts"
+  },
+  "type": "TABLE"
+}

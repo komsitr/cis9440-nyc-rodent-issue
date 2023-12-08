@@ -1,0 +1,89 @@
+{
+  "creationTime": "1701687570827",
+  "etag": "+ughS1e5NV4fECqAbL8YoA==",
+  "id": "avid-garage-399623:cis9440_project.stage_nyc_311_request_location",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1701812346381",
+  "location": "us-east4",
+  "numActiveLogicalBytes": "303226954",
+  "numActivePhysicalBytes": "30420178",
+  "numBytes": "303226954",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "2281916",
+  "numTimeTravelPhysicalBytes": "5308134",
+  "numTotalLogicalBytes": "303226954",
+  "numTotalPhysicalBytes": "30420178",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "unique_key",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "created_date",
+        "type": "DATETIME"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "borough_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "neighborhood_code",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "neighborhood_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "zipcode",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "tract_bct2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "tract_geoid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "block_bctcb2020",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "block_geoid",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "locationType",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/avid-garage-399623/datasets/cis9440_project/tables/stage_nyc_311_request_location",
+  "tableReference": {
+    "datasetId": "cis9440_project",
+    "projectId": "avid-garage-399623",
+    "tableId": "stage_nyc_311_request_location"
+  },
+  "type": "TABLE"
+}
