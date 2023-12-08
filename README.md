@@ -1,5 +1,12 @@
 # CIS 9440 NYC Rodent Issue
 This repository stores the Python code for the Fall 2023 class project of CIS 9440 Data Warehousing and Analytics at Baruch College.  
+**Professor:** Professor Isaac Vaghefi  
+**Team members:**
+- Komsit Rattana
+- Angela Lee
+- Derek Strang
+- Mariya Mithaiwala
+
 The project analyzes NYC 311 Service Requests data to find insights from the rodent complaints with secondary data sources like:  
 - NYC Geographical boundaries (NTA, Tract, Block, zip code)
   - https://data.cityofnewyork.us/City-Government/2020-Neighborhood-Tabulation-Areas-NTAs-Mapped/4hft-v355
