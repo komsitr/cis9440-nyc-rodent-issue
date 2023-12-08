@@ -12,9 +12,9 @@ The project analyzes NYC 311 Service Requests data to find insights from the rod
   - https://data.cityofnewyork.us/City-Government/2020-Neighborhood-Tabulation-Areas-NTAs-Mapped/4hft-v355
   - https://data.cityofnewyork.us/City-Government/2020-Census-Tracts-Tabular/63ge-mke6
   - https://data.cityofnewyork.us/City-Government/2020-Census-Blocks-Mapped/sbvv-hpwv
-- NYC Open Restaurant data
+- NYC Open Restaurant data  
   https://data.cityofnewyork.us/Transportation/Open-Restaurant-Applications-Historic-/pitm-atqc
-- Restaurant Inspection data
+- Restaurant Inspection data  
   https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j
 - Population data by block from 2020 Census Data-census blocks  
   https://www.nyc.gov/site/planning/planning-level/nyc-population/2020-census.page
